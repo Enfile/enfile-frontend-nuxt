@@ -1,5 +1,5 @@
 FROM node:12.13-alpine
 
 WORKDIR /app
-
-RUN apk update
+ENV HOST 0.0.0.0
+EXPOSE 3000
