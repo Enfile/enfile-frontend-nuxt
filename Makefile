@@ -3,7 +3,8 @@ build:
 	docker-compose run app yarn install
 
 up:
-	docker-compose run app yarn dev
+	docker-compose up -d
+	docker-compose exec app yarn dev
 
 down:
 	docker-compose down
@@ -13,3 +14,4 @@ lint:
 
 test:
 	docker-compose run front yarn test
+
