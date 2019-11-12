@@ -1,6 +1,5 @@
 <template>
   <v-app>
-
     <v-app-bar
       :clipped-left="clipped"
       fixed
@@ -28,7 +27,7 @@
       temporary
       fixed
     >
-      <v-list></v-list>
+      <v-list />
     </v-navigation-drawer>
 
     <v-footer

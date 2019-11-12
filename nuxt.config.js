@@ -44,7 +44,8 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'nuxt-webfontloader'
   ],
   /*
   ** Axios module configuration
@@ -75,6 +76,11 @@ export default {
           accent: colors.indigo.base, // #3F51B5
         },
       }
+    }
+  },
+  webfontloader: {
+    google: {
+      families: ['Fredoka+One'] //Loads Lato font with weights 400 and 700
     }
   },
   /*
