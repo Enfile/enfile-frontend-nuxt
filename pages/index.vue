@@ -13,8 +13,8 @@
     </v-col>
     <v-col cols="sm-12">
       <v-btn color="success" class="mt-3 text-center" block>
-SignIn
-</v-btn>
+        SignIn
+      </v-btn>
     </v-col>
   </v-row>
 </template>
