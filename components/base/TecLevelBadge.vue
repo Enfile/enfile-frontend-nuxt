@@ -1,7 +1,9 @@
 <template>
   <div>
     <v-chip class="ma-2" label>
-      <span class="level-block">{{ level }}</span>
+      <v-avatar tile left class="level-block white">
+        {{ level }}
+      </v-avatar>
       {{ technology }}
     </v-chip>
   </div>
@@ -20,15 +22,6 @@ export default {
 
 <style lang="scss" scoped>
 .level-block {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  font-weight: bold;
-  font-size: larger;
-  margin-right: 10px;
   border-radius: 2px;
-  border: 1.5px solid;
-  box-sizing: content-box;
 }
 </style>
