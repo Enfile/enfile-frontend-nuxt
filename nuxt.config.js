@@ -30,7 +30,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: ['plugins/vuetify'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -89,6 +89,7 @@ export default {
     /*
      ** You can extend webpack config here
      */
+    transpile: ['vuetify/lib'],
     extend(config, ctx) {
       // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
