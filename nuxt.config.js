@@ -45,6 +45,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     'nuxt-webfontloader'
   ],
   /*
@@ -52,6 +53,19 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  auth: {
+    redirect: {
+      login: '/', //未ログイン状態でアクセスした場合のリダイレクト先
+      logout: '/', //ログアウト後の遷移先
+      callback: '/callback', //コールバックルート
+      home: '/home' //ログイン後の遷移先
+    },
+    strategies: {
+      google: {
+        client_id: ''
+      }
+    }
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
