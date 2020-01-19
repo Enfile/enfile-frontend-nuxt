@@ -10,7 +10,7 @@ export default {
   components: {},
   async mounted() {
     let account = await this.$axios.$get(
-      `/user/account?sub=${this.$store.$auth.user.sub}`
+      `/user?account__sub=${this.$store.$auth.user.sub}`
     )
 
     if (account.length === 0) {
