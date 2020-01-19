@@ -14,8 +14,11 @@
       </v-col>
       <v-col cols="sm-12" class="text-center">
         <div class="my-3">
-          <v-btn color="success" min-width="200">
-            SignIn
+          <v-btn color="success" min-width="200" @click="googleAuthenticate">
+            Google SignIn
+          </v-btn>
+          <v-btn class="ml-3" variant="danger" @click="logout">
+            Logout
           </v-btn>
         </div>
       </v-col>
@@ -26,7 +29,15 @@
 <script>
 export default {
   layout: 'signin',
-  components: {}
+  components: {},
+  methods: {
+    googleAuthenticate() {
+      this.$auth.loginWith('google')
+    },
+    logout() {
+      this.$auth.logout()
+    }
+  }
 }
 </script>
 
