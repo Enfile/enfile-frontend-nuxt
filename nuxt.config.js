@@ -59,8 +59,8 @@ export default {
     redirect: {
       login: '/', //未ログイン状態でアクセスした場合のリダイレクト先
       logout: '/', //ログアウト後の遷移先
-      callback: '/callback', //コールバックルート
-      home: '/signin' //ログイン後の遷移先
+      callback: '/auth/callback', //コールバックルート
+      home: '/auth/check' //ログイン後の遷移先
     },
     strategies: {
       google: {

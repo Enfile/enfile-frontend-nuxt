@@ -14,7 +14,7 @@ export default {
   components: {},
   methods: {
     async testAxios() {
-      console.log(await this.$axios.$get('/user'))
+      console.log(await this.$axios.$get('/user/user'))
     }
   }
 }
