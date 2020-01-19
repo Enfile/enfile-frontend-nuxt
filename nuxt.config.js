@@ -30,7 +30,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['plugins/vuetify'],
+  plugins: ['plugins/vuetify', '@/plugins/axios'],
   /*
    ** Nuxt.js dev-modules
    */
@@ -52,17 +52,20 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:8000/api'
+  },
   auth: {
     redirect: {
       login: '/', //未ログイン状態でアクセスした場合のリダイレクト先
       logout: '/', //ログアウト後の遷移先
       callback: '/callback', //コールバックルート
-      home: '/home' //ログイン後の遷移先
+      home: '/signin' //ログイン後の遷移先
     },
     strategies: {
       google: {
-        client_id: ''
+        client_id:
+          '913896855006-fjdtfqkda3u0e4djguj1r8s5ik39p66r.apps.googleusercontent.com'
       }
     }
   },

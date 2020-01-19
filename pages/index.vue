@@ -20,9 +20,6 @@
           <v-btn class="ml-3" variant="danger" @click="logout">
             Logout
           </v-btn>
-          <v-btn class="ml-3" variant="danger" @click="axiosTest">
-            axios test
-          </v-btn>
         </div>
       </v-col>
     </v-row>
@@ -30,8 +27,6 @@
 </template>
 
 <script>
-import axios from '../.nuxt/axios'
-
 export default {
   layout: 'signin',
   components: {},
@@ -41,9 +36,6 @@ export default {
     },
     logout() {
       this.$auth.logout()
-    },
-    axiosTest() {
-      axios.post('http://localhost:8000/user')
     }
   }
 }
