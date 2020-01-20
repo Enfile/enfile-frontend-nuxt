@@ -5,7 +5,7 @@
         <v-card-title
           class="headline font-weight-regular blue-grey white--text"
         >
-          基本プロフィール
+          ユーザー検索
         </v-card-title>
         <v-card-text class="mt-3">
           <v-text-field v-model="form.name" :counter="20" label="名前" />
@@ -14,7 +14,9 @@
             :counter="20"
             label="学校名"
           />
+
           <v-text-field v-model="form.using_os" :counter="20" label="使用OS" />
+
           <v-text-field
             v-model="form.technology_name"
             :counter="20"
@@ -22,7 +24,6 @@
           />
 
           <v-radio-group v-model="form.order_by" label="レベル" row>
-            <v-radio :label="`なし`" :value="``" />
             <v-radio :label="`昇順`" :value="`order_by_level`" />
             <v-radio :label="`降順`" :value="`-order_by_level`" />
           </v-radio-group>
@@ -77,6 +78,19 @@ export default {
     await this.loadUsers('')
   },
   methods: {
+    buildQuery() {
+      let query = '?1=1'
+      if (this.form.name !== '') query += `&profile__name=${this.form.name}`
+      if (this.form.school_name !== '')
+        query += `&profile__school_name=${this.form.school_name}`
+      if (this.form.using_os !== '')
+        query += `&profile__using_os=${this.form.using_os}`
+      if (this.form.technology_name !== '')
+        query += `&technologies__name=${this.form.technology_name}`
+      if (this.form.order_by !== '') query += `&order_by=${this.form.order_by}`
+
+      return query
+    },
     async loadUsers(query) {
       await this.$axios
         .$get(`/user/${query}`)
@@ -88,7 +102,8 @@ export default {
         })
     },
     async search() {
-      this.loadUsers('')
+      const query = this.buildQuery()
+      this.loadUsers(query)
     }
   }
 }
