@@ -16,6 +16,7 @@ export default {
     if (account.length === 0) {
       this.$router.push('/auth/signup')
     } else {
+      await this.$store.dispatch('fetchUser')
       this.$router.push('/home')
     }
   }

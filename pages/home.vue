@@ -1,8 +1,11 @@
 <template>
   <div>
     <h1>home</h1>
-    <p>{{ $store.$auth.user }}</p>
-    <button @click="testAxios">
+    <p>{{ $store.state.user }}</p>
+    <button @click="testSetUser">
+      axios test
+    </button>
+    <button @click="testSignOut">
       axios test
     </button>
   </div>
@@ -12,9 +15,15 @@
 export default {
   layout: 'home',
   components: {},
+  created() {
+    console.log(this.$store.state.user)
+  },
   methods: {
-    async testAxios() {
-      console.log(await this.$axios.$get('/user/user'))
+    async testSetUser() {
+      await this.$store.dispatch('fetchUser')
+    },
+    testSignOut() {
+      this.$store.commit('signOut')
     }
   }
 }
