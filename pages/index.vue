@@ -17,9 +17,6 @@
           <v-btn color="success" min-width="200" @click="googleAuthenticate">
             Google SignIn
           </v-btn>
-          <v-btn class="ml-3" variant="danger" @click="logout">
-            Logout
-          </v-btn>
         </div>
       </v-col>
     </v-row>
@@ -33,9 +30,6 @@ export default {
   methods: {
     googleAuthenticate() {
       this.$auth.loginWith('google')
-    },
-    logout() {
-      this.$store.commit('signOut')
     }
   }
 }
