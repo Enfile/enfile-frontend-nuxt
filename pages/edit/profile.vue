@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <div>
     <v-form ref="form" v-model="form.valid" lazy-validation>
       <v-card>
         <v-card-title
@@ -95,7 +95,14 @@
         </v-btn>
       </div>
     </v-form>
-  </v-card>
+
+    <v-snackbar v-model="snackbar" :timeout="timeout">
+      プロフィールを更新しました
+      <v-btn color="blue" text @click="snackbar = false">
+        Close
+      </v-btn>
+    </v-snackbar>
+  </div>
 </template>
 
 <script>
@@ -105,6 +112,8 @@ export default {
 
   data: () => ({
     menu: false,
+    snackbar: false,
+    timeout: 2000,
     form: {
       profile: {
         icon_path: '',
@@ -123,9 +132,17 @@ export default {
     select: null,
     items: ['1', '2', '3', '4']
   }),
-  created() {
+  mounted() {
     const user = this.$store.state.user
-    console.log(user)
+    this.form.profile.name = user.profile.name
+    this.form.profile.sex = user.profile.sex
+    this.form.profile.birth_day = user.profile.birth_day
+    this.form.profile.school_year = user.profile.school_year
+    this.form.profile.school_name = user.profile.school_name
+    this.form.profile.profile = user.profile.profile
+    this.form.profile.using_os = user.profile.using_os
+    this.form.profile.link = user.profile.link
+    this.form.profile.contact = user.profile.contact
   },
   methods: {
     async submit() {
@@ -133,7 +150,7 @@ export default {
         .$post(`/user/`, this.form)
         .then(() => {
           this.$store.dispatch('fetchUser')
-          this.$router.push('/home')
+          this.snackbar = true
         })
         .catch(error => console.log(error))
     }
