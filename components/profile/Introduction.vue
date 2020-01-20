@@ -12,7 +12,7 @@
       <v-card-title primary-title>
         業務経験
       </v-card-title>
-      <div>
+      <div v-for="n in 2" :key="n">
         <v-list-item three-line>
           <v-list-item-content>
             <v-list-item-title>株式会社×××××</v-list-item-title>
@@ -36,7 +36,7 @@
       <v-card-title primary-title>
         成果物
       </v-card-title>
-      <div>
+      <div v-for="n in 2" :key="n">
         <v-list-item three-line>
           <v-list-item-content>
             <v-list-item-title>hogeシステム</v-list-item-title>
@@ -60,7 +60,7 @@
       <v-card-title primary-title>
         使ったことある技術
       </v-card-title>
-      <div>
+      <div v-for="n in 2" :key="n">
         <v-list-item three-line>
           <v-list-item-content>
             <v-list-item-title>C言語</v-list-item-title>
@@ -81,7 +81,7 @@
       <v-card-title primary-title>
         使いたくない技術
       </v-card-title>
-      <div>
+      <div v-for="n in 2" :key="n">
         <v-list-item three-line>
           <v-list-item-content>
             <v-list-item-title>C言語</v-list-item-title>
@@ -102,7 +102,7 @@
       <v-card-title primary-title>
         使っているOS
       </v-card-title>
-      <div>
+      <div v-for="n in 2" :key="n">
         <v-list-item three-line>
           <v-list-item-content>
             <v-list-item-title>C言語</v-list-item-title>
@@ -123,7 +123,7 @@
       <v-card-title primary-title>
         使っているOS
       </v-card-title>
-      <div>
+      <div v-for="n in 2" :key="n">
         <v-list-item three-line>
           <v-list-item-content>
             <v-list-item-title>C言語</v-list-item-title>
