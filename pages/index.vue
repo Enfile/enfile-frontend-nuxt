@@ -35,7 +35,7 @@ export default {
       this.$auth.loginWith('google')
     },
     logout() {
-      this.$auth.logout()
+      this.$store.commit('signOut')
     }
   }
 }

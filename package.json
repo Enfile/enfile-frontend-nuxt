@@ -22,7 +22,8 @@
     "eslint-plugin-vue": "^6.0.1",
     "nuxt": "^2.0.0",
     "nuxt-webfontloader": "^1.1.0",
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "vuex-persistedstate": "^2.7.0"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
