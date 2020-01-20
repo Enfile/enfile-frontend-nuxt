@@ -1,27 +1,21 @@
 <template>
   <div>
-    <p>{{ user }}</p>
+    <p>{{ user.profile }}</p>
+    <top-icon />
+    <introduction />
   </div>
 </template>
 
 <script>
+import Introduction from '@/components/profile/Introduction.vue'
+import TopIcon from '@/components/profile/TopIcon.vue'
+
 export default {
   layout: 'user-detail',
-  components: {},
-  data: () => ({
-    user: null
-  }),
-  async mounted() {
-    const userId = this.$route.params.id
-    console.log(userId)
-    await this.$axios
-      .$get(`/user/${userId}`)
-      .then(response => {
-        this.user = response
-      })
-      .catch(error => {
-        console.log(error)
-      })
+  components: { Introduction, TopIcon },
+  async asyncData({ params, $axios }) {
+    const user = await $axios.$get(`/user/${params.id}`)
+    return { user }
   }
 }
 </script>
