@@ -15,7 +15,11 @@
     </v-content>
 
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
-      <v-list />
+      <v-list nav dense>
+        <v-list-item @click="$store.commit('signOut')">
+          <v-list-item-title>ログアウト</v-list-item-title>
+        </v-list-item>
+      </v-list>
     </v-navigation-drawer>
 
     <v-footer :fixed="fixed" app>

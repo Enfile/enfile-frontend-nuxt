@@ -5,9 +5,6 @@
     <button @click="testSetUser">
       axios test
     </button>
-    <button @click="testSignOut">
-      axios test
-    </button>
   </div>
 </template>
 
@@ -21,9 +18,6 @@ export default {
   methods: {
     async testSetUser() {
       await this.$store.dispatch('fetchUser')
-    },
-    testSignOut() {
-      this.$store.commit('signOut')
     }
   }
 }
