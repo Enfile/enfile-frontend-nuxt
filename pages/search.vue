@@ -44,12 +44,14 @@
               <v-img :src="user.profile.icon_path" />
             </v-list-item-avatar>
 
-            <v-list-item-content>
-              <v-list-item-title v-html="user.profile.name" />
-              <v-list-item-subtitle>
-                <TecLevelBadge />
-              </v-list-item-subtitle>
-            </v-list-item-content>
+            <n-link :to="`/user/${user.user_id}`">
+              <v-list-item-content>
+                <v-list-item-title v-html="user.profile.name" />
+                <v-list-item-subtitle>
+                  <TecLevelBadge />
+                </v-list-item-subtitle>
+              </v-list-item-content>
+            </n-link>
           </v-list-item>
         </template>
       </v-list>
