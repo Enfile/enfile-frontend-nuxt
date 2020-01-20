@@ -81,7 +81,10 @@ export default {
     async create() {
       await this.$axios
         .$post(`/user/`, this.form)
-        .then(result => console.log(result.data))
+        .then(() => {
+          this.$store.dispatch('fetchUser')
+          this.$router.push('/home')
+        })
         .catch(error => console.log(error))
     }
   }
