@@ -14,10 +14,10 @@ export default {
     )
 
     if (account.length === 0) {
-      this.$router.push('/auth/signup')
+      await this.$router.push('/auth/signup')
     } else {
       await this.$store.dispatch('fetchUser')
-      this.$router.push('/home')
+      await this.$router.push('/home')
     }
   }
 }
