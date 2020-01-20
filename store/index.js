@@ -2,10 +2,6 @@ export const state = () => ({
   user: null
 })
 
-// export const getters = {
-//   user: state > state.user
-// }
-
 export const mutations = {
   setUser(state, user) {
     state.user = user
@@ -21,8 +17,9 @@ export const mutations = {
 
 export const actions = {
   async fetchUser({ commit }) {
+    let query = `?account__sub=${this.$auth.user.sub}`
     this.$axios
-      .$get(`/user/`)
+      .$get(`/user/${query}`)
       .then(response => {
         console.log(response[0])
         commit('setUser', response[0])
