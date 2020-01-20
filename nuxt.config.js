@@ -103,6 +103,9 @@ export default {
       families: ['Fredoka+One'] //Loads Lato font with weights 400 and 700
     }
   },
+  router: {
+    middleware: 'authenticate'
+  },
   /*
    ** Build configuration
    */
