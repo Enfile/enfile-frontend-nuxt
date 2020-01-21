@@ -34,7 +34,11 @@
                       </v-list-item-content>
                     </v-list-item>
                   </nuxt-link>
-                  <nuxt-link to="/edit/experiences" no-prefetch>
+                  <nuxt-link
+                    to="/edit/experiences"
+                    no-prefetch
+                    class="link-list"
+                  >
                     <v-list-item>
                       <v-list-item-content>
                         <v-list-item-title>
@@ -43,7 +47,7 @@
                       </v-list-item-content>
                     </v-list-item>
                   </nuxt-link>
-                  <nuxt-link to="/edit/products" no-prefetch>
+                  <nuxt-link to="/edit/products" no-prefetch class="link-list">
                     <v-list-item>
                       <v-list-item-content>
                         <v-list-item-title>
@@ -52,7 +56,11 @@
                       </v-list-item-content>
                     </v-list-item>
                   </nuxt-link>
-                  <nuxt-link to="/edit/technologies" no-prefetch>
+                  <nuxt-link
+                    to="/edit/technologies"
+                    no-prefetch
+                    class="link-list"
+                  >
                     <v-list-item>
                       <v-list-item-content>
                         <v-list-item-title>

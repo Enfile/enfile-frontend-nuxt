@@ -89,8 +89,8 @@
         </v-card-text>
       </v-card>
 
-      <div class="mt-5">
-        <v-btn class="mr-4" @click="submit">
+      <div class="mt-5 text-center">
+        <v-btn class="mr-4" color="success" @click="submit">
           更新
         </v-btn>
       </div>
