@@ -74,6 +74,7 @@ export default {
   data: () => ({
     snackbar: false,
     timeout: 2000,
+    editUser: null,
     form: {
       technologies: [
         {
@@ -87,8 +88,9 @@ export default {
     }
   }),
   mounted() {
-    // const user = this.$store.state.user
-    // this.form.technologies = user.technologies
+    this.form.technologies = JSON.parse(
+      JSON.stringify(this.$store.state.user.technologies)
+    )
   },
   methods: {
     newList() {
@@ -102,7 +104,10 @@ export default {
     },
     async submit() {
       let editUser = JSON.parse(JSON.stringify(this.$store.state.user))
-      editUser.profile = Object.assign(editUser.profile, this.form.profile)
+      editUser.technologies = Object.assign(
+        editUser.technologies,
+        this.form.technologies
+      )
 
       await this.$store.dispatch('updateUser', editUser)
       this.snackbar = true
