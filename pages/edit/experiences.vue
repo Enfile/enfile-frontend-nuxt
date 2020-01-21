@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-form ref="form" v-model="form.valid" lazy-validation>
-      <v-card class="mx-auto my-3" max-width="auto">
+      <v-card class="mx-auto" max-width="auto">
         <v-card-title
           class="headline font-weight-regular blue-grey white--text"
         >
@@ -34,8 +34,8 @@
         </div>
       </v-card>
 
-      <div class="mt-5">
-        <v-btn class="mr-4" @click="submit">
+      <div class="mt-5 text-center">
+        <v-btn class="mr-4" color="success" @click="submit">
           更新
         </v-btn>
       </div>
