@@ -134,6 +134,7 @@ export default {
   }),
   mounted() {
     const user = this.$store.state.user
+    this.form.profile.icon_path = user.profile.icon_path
     this.form.profile.name = user.profile.name
     this.form.profile.sex = user.profile.sex
     this.form.profile.birth_day = user.profile.birth_day
