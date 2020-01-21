@@ -27,5 +27,16 @@ export const actions = {
       .catch(error => {
         console.log(error)
       })
+  },
+  async updateUser({ commit }, userReq) {
+    delete userReq.account
+    const path = '/user/' + userReq.user_id + '/'
+    await this.$axios
+      .$put(path, userReq)
+      .then(response => {
+        console.log(response)
+        commit('setUser', response)
+      })
+      .catch(error => console.log(error))
   }
 }
