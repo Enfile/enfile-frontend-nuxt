@@ -17,7 +17,7 @@ export default {
       await this.$router.push('/auth/signup')
     } else {
       await this.$store.dispatch('fetchUser')
-      await this.$router.push('/home')
+      await this.$router.push('/search')
     }
   }
 }

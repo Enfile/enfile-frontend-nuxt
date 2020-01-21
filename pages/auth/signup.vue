@@ -138,7 +138,7 @@ export default {
         .$post(`/user/`, this.form)
         .then(() => {
           this.$store.dispatch('fetchUser')
-          this.$router.push('/home')
+          this.$router.push('/search')
         })
         .catch(error => console.log(error))
     }
