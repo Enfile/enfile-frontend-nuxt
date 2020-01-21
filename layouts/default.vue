@@ -19,6 +19,13 @@
         <v-list-item @click="$store.commit('signOut')">
           <v-list-item-title>ログアウト</v-list-item-title>
         </v-list-item>
+        <nuxt-link to="/edit/profile" no-prefetch class="link-list">
+          <v-list-item>
+            <v-list-item-title>
+              登録情報編集
+            </v-list-item-title>
+          </v-list-item>
+        </nuxt-link>
       </v-list>
     </v-navigation-drawer>
 
