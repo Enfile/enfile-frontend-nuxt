@@ -63,8 +63,9 @@ export default {
     }
   }),
   mounted() {
-    // const user = this.$store.state.user
-    // this.form.technologies = user.technologies
+    this.form.products = JSON.parse(
+      JSON.stringify(this.$store.state.user.products)
+    )
   },
   methods: {
     newList() {
@@ -77,8 +78,7 @@ export default {
     },
     async submit() {
       let editUser = JSON.parse(JSON.stringify(this.$store.state.user))
-      editUser.profile = Object.assign(editUser.profile, this.form.profile)
-
+      editUser.products = Object.assign(editUser.products, this.form.products)
       await this.$store.dispatch('updateUser', editUser)
       this.snackbar = true
     }
