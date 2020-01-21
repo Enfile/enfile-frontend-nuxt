@@ -146,13 +146,11 @@ export default {
   },
   methods: {
     async submit() {
-      await this.$axios
-        .$post(`/user/`, this.form)
-        .then(() => {
-          this.$store.dispatch('fetchUser')
-          this.snackbar = true
-        })
-        .catch(error => console.log(error))
+      let editUser = JSON.parse(JSON.stringify(this.$store.state.user))
+      editUser.profile = Object.assign(editUser.profile, this.form.profile)
+
+      await this.$store.dispatch('updateUser', editUser)
+      this.snackbar = true
     }
   }
 }
