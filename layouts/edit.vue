@@ -92,6 +92,13 @@
             </v-list-item-title>
           </v-list-item>
         </nuxt-link>
+        <nuxt-link to="/search" no-prefetch class="link-list">
+          <v-list-item>
+            <v-list-item-title>
+              ユーザー検索
+            </v-list-item-title>
+          </v-list-item>
+        </nuxt-link>
       </v-list>
     </v-navigation-drawer>
 
